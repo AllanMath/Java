@@ -1,0 +1,83 @@
+import javax.swing.JOptionPane;
+
+public class Principal {
+	public static void subform1op1(){
+		double s,t,v;
+		s=Double.parseDouble(JOptionPane.showInputDialog("VM=S\n        ---\n         T\nInforme o Espaço(S.I.):"));
+		t=Double.parseDouble(JOptionPane.showInputDialog("VM="+s+"\n        ---\n         T\nInforme o Tempo(S.I.):"));
+		v=s/t;
+		JOptionPane.showMessageDialog(null,"VM="+s+"/"+t+"="+v+"m/s");
+	}
+	public static void subform1op2(){
+		double s,t,v;
+		v=Double.parseDouble(JOptionPane.showInputDialog("VM=S\n        ---\n         T\nInforme a Velocidade(S.I.):"));
+		t=Double.parseDouble(JOptionPane.showInputDialog(v+"=S\n        ---\n         \nInforme o Tempo(S.I.):"));
+		s=v*t;
+		JOptionPane.showMessageDialog(null,+v+"=^s^"+t+"="+s+" metros");
+	}
+	public static void subform1op3(){
+		double s,t,v;
+		v=Double.parseDouble(JOptionPane.showInputDialog("VM=S\n        ---\n         T\nInforme a Velocidade(S.I.):"));
+		s=Double.parseDouble(JOptionPane.showInputDialog(v+"=S\n        ---\n         T\nInforme o Tempo(S.I.):"));
+		t=v/s;
+		JOptionPane.showMessageDialog(null,v+"="+s+"\n----"+"\nT"+"="+t+" Segundos");
+	}
+	public static void form1(){
+		int r=0;
+		while(r!=9){
+			r=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1- Calcular Velocidade Média"+
+																  "\n2- Calcular o Espaço Percorrido"+
+																  "\n3- Calcular o Tempo gasto"+
+																  "\n9- Sair"));
+			switch(r){
+			case 1:subform1op1();break;
+			case 2:subform1op2();break;
+			case 3:subform1op3();break;
+			case 9: System.exit(0);
+			default:JOptionPane.showMessageDialog(null,"Digite uma opção Valida:");
+			}
+	}
+	}
+	public static void form2(){
+		double v,t,a;
+		v=Double.parseDouble(JOptionPane.showInputDialog("A=^VM/^T\nInforme a Velocidade Média(S.I.):"));
+		t=Double.parseDouble(JOptionPane.showInputDialog("A="+v+"/^t\nInforme o Tempo(S.I.):"));
+		a=v/t;
+		JOptionPane.showMessageDialog(null,"VM="+v+"/"+t+"="+a+"m/s");
+	}
+	public static void form3(){
+		double ms,kmh;
+		ms=Double.parseDouble(JOptionPane.showInputDialog("Informe a Velocidade em m/s"));
+		kmh=ms*3.6;
+		JOptionPane.showMessageDialog(null,ms+" m/s em Km/h é igual à "+kmh+" km/h");
+	}
+	public static void form4(){
+		double ms,kmh;
+		kmh=Double.parseDouble(JOptionPane.showInputDialog("Informe a Velocidade em Km/h"));
+		ms=kmh/3.6;
+		JOptionPane.showMessageDialog(null,ms+" Km/h em m/s é igual à "+ms+" m/s");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int r=0;
+		while(r!=9){
+			r=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1- Calcular Velocidade Média"+
+																  "\n2- Calcular Aceleração Média"+
+																  "\n3- Transformar m/s em km/h"+
+																  "\n4- Transformar km/h em m/s"+
+																  "\n9- Sair"));
+			switch(r){
+			case 1:form1();break;
+			case 2:form2();break;
+			case 3:form3();break;
+			case 4:form4();break;
+			case 9: System.exit(0);
+			default:JOptionPane.showMessageDialog(null,"Digite uma opção Valida:");
+			}
+		}
+		
+		
+	}
+
+}
