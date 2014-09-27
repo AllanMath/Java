@@ -28,12 +28,12 @@ public class Principal {
 			r=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1- Calcular Velocidade Média"+
 																  "\n2- Calcular o Espaço Percorrido"+
 																  "\n3- Calcular o Tempo gasto"+
-																  "\n9- Sair"));
+																  "\n9- Voltar"));
 			switch(r){
 			case 1:subform1op1();break;
 			case 2:subform1op2();break;
 			case 3:subform1op3();break;
-			case 9: System.exit(0);
+			case 9: break;
 			default:JOptionPane.showMessageDialog(null,"Digite uma opção Valida:");
 			}
 	}
@@ -55,14 +55,14 @@ public class Principal {
 		double ms,kmh;
 		kmh=Double.parseDouble(JOptionPane.showInputDialog("Informe a Velocidade em Km/h"));
 		ms=kmh/3.6;
-		JOptionPane.showMessageDialog(null,ms+" Km/h em m/s é igual à "+ms+" m/s");
+		JOptionPane.showMessageDialog(null,kmh+" Km/h em m/s é igual à "+ms+" m/s");
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		int r=0;
 		while(r!=9){
-			r=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1- Calcular Velocidade Média"+
+			r=Integer.parseInt(JOptionPane.showInputDialog("Digite\n1- Calcular Velocidade, espaço ou tempo percorrido"+
 																  "\n2- Calcular Aceleração Média"+
 																  "\n3- Transformar m/s em km/h"+
 																  "\n4- Transformar km/h em m/s"+
